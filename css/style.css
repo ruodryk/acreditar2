@@ -1,0 +1,634 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap");
+
+:root {
+  --magenta: #ff1e91;
+  --magenta-escuro: #8d084c;
+  --azul-escuro: #484bad;
+  --azul-claro: #86f2ff;
+  --cinza-escuro: #aaa;
+  --cinza: #eee;
+  --branco: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(0, 0, 0, 0.349);
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
+}
+
+p {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: var(--magenta);
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+a:hover,
+a:active {
+  color: var(--magenta-escuro);
+  font-weight: 700;
+}
+
+/***************************************
+********* REUTILIZAVEIS ****************/
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 2.4rem;
+}
+
+.grid-2col {
+  grid-template-columns: 1fr 1fr;
+}
+
+.grid-3col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4col {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4.8rem;
+}
+
+.primary-heading {
+  font-size: 9.6rem;
+  line-height: 1;
+}
+
+.secondary-heading {
+  font-size: 6.4rem;
+  line-height: 1;
+}
+
+.tertiary-heading {
+  font-size: 3.2rem;
+  line-height: 1;
+}
+
+.quarter-heading {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.size {
+  height: 80rem;
+}
+
+.primary-link:link,
+.primary-link:visited {
+  font-size: 1.8rem;
+  background-color: var(--magenta);
+  color: white;
+  text-transform: uppercase;
+  display: inline-block;
+  text-decoration: none;
+  padding: 1.2rem 3.6rem;
+  transition: all 0.3s ease-in;
+}
+
+.primary-link:hover,
+.primary-link:active {
+  color: var(--magenta);
+  background: none;
+  box-shadow: var(--magenta) 0 0 0 0.1rem inset;
+}
+
+.secondary-link:link,
+.secondary-link:visited {
+  font-size: 1.8rem;
+  background: none;
+  color: black;
+  text-transform: uppercase;
+  display: inline-block;
+  text-decoration: none;
+  padding: 1.2rem 3.6rem;
+  box-shadow: black 0 0 0 0.1rem inset;
+  transition: all 0.3s ease-in;
+}
+
+.secondary-link:hover,
+.secondary-link:active {
+  color: white;
+  background-color: var(--magenta);
+  box-shadow: black 0 0 0 0 inset;
+}
+
+.margin-bt-sm {
+  margin-bottom: 2.4rem;
+}
+
+/**************************************
+****** FUNDO *************************/
+
+.fundo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url(../img/vol.jpg);
+  background-size: cover;
+  z-index: -999;
+}
+
+/***************************************
+********* NAVEGAÇÃO *******************/
+
+.header {
+  background-color: white;
+  border-bottom: 1px solid var(--cinza);
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header img {
+  height: 9.6rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 4.8rem;
+}
+
+.nav-link:link,
+.nav-link:visited {
+  font-size: 1.6rem;
+  color: var(--azul-escuro);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in;
+}
+
+.nav-link:hover,
+.nav-link:active {
+  color: var(--magenta);
+}
+
+.nav .btn-close,
+.btn-menu {
+  display: none;
+  cursor: pointer;
+}
+
+/***************************************
+********* DOACAO SECTION *************/
+
+.doacao {
+  background-image: url(../img/capa.png);
+  height: 80rem;
+  background-size: cover;
+  text-align: right;
+  /* padding: 14.4rem 0 9.6rem; */
+}
+
+.doacao-box {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  justify-content: center;
+  height: 100%;
+}
+
+.chapeu {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.doacao-text {
+  font-size: 1.8rem;
+}
+
+.doacao-link-box {
+  display: flex;
+  gap: 2.4rem;
+  justify-content: flex-end;
+}
+
+/***************************************
+********* DADOS SECTION *************/
+
+.dados {
+  background-color: var(--branco);
+}
+
+.dados-card {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  padding: 2.4rem;
+  gap: 2.4rem;
+  color: white;
+  background-color: black;
+  line-height: 1.6;
+  transform: translateY(-50%);
+}
+
+.pink {
+  background-color: var(--magenta);
+}
+
+.dados-text-box {
+  border-right: 1px solid var(--branco);
+}
+
+/***************************************
+********* DADOS SECTION *************/
+
+.sobre {
+  padding: 4.8rem 0;
+  background-color: var(--branco);
+}
+
+.sobre-text-box {
+  align-self: center;
+}
+
+.sobre-title {
+  font-size: 6.4rem;
+  line-height: 1;
+  margin-bottom: 3.2rem;
+}
+
+.sobre-text {
+  font-size: 1.8rem;
+  margin-bottom: 3.2rem;
+  color: grey;
+}
+
+.sobre-img-box {
+  justify-self: center;
+}
+
+.sobre-cards {
+  display: grid;
+  gap: 2.4rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.sobre-card {
+  padding: 2.4rem;
+  border: 1px solid var(--cinza);
+}
+
+.sobre-icon {
+  font-size: 4.8rem;
+  color: var(--magenta);
+}
+
+.sobre-number {
+  font-size: 3.2rem;
+}
+
+.sobre-des {
+  font-size: 1.6rem;
+  color: grey;
+}
+
+/***************************************
+********* CAUSAS SECTION *************/
+
+.causas {
+  padding: 9.6rem 0;
+  background-color: var(--cinza);
+  text-align: center;
+}
+
+.causa {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.causas-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 4.8rem;
+}
+
+.causas-card {
+  text-align: left;
+  background-color: var(--branco);
+}
+
+.causas-card img {
+  width: 100%;
+  border-bottom: 4px solid var(--magenta);
+}
+
+.causas-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  color: var(--cinza-escuro);
+}
+
+.causas-text-box {
+  padding: 3.2rem;
+}
+
+.causas-links {
+  display: flex;
+}
+
+.causas-link:link,
+.causas-link:visited {
+  color: var(--branco);
+  background-color: var(--magenta);
+  text-decoration: none;
+  font-size: 1.5rem;
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  padding: 1.4rem;
+  transition: all 0.3s ease-in;
+}
+
+.causas-link:hover,
+.causas-link:active {
+  color: var(--magenta);
+  background-color: var(--branco);
+  box-shadow: var(--magenta) 0 0 0 0.1rem inset;
+}
+
+.causas-link2:link,
+.causas-link2:visited {
+  color: black;
+  background-color: var(--branco);
+  box-shadow: var(--cinza) 0 0 0 0.1rem inset;
+  text-decoration: none;
+  font-size: 1.5rem;
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  padding: 1.4rem;
+  transition: all 0.3s ease-in;
+}
+
+.causas-link2:hover,
+.causas-link2:active {
+  color: var(--branco);
+  background-color: black;
+}
+
+/***************************************
+********* FEATURES SECTION *************/
+
+.caract {
+  padding: 9.6rem 0;
+  text-align: center;
+  background-image: url(../img/people.jpg);
+  background-size: cover;
+  color: var(--branco);
+}
+
+.caract-text {
+  font-size: 1.8rem;
+}
+
+.caract-items.grid {
+  gap: 3.2rem;
+}
+
+.caract-card {
+  text-align: left;
+  padding: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  background-color: var(--branco);
+  margin-top: 4.8rem;
+  color: var(--cinza-escuro);
+}
+
+.caract-number {
+  font-size: 3.2rem;
+  color: var(--branco);
+  background-color: var(--magenta);
+  display: inline-block;
+  padding: 1.2rem;
+}
+
+.caract-title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-left: 3.2rem;
+  border-bottom: 2px solid var(--cinza-escuro);
+  padding: 1.2rem;
+}
+
+/***************************************
+********* EVENTOS SECTION *************/
+
+.eventos {
+  padding: 9.6rem 0;
+  text-align: center;
+  background-color: var(--branco);
+}
+
+.eventos-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4.8rem;
+  margin-top: 4.8rem;
+}
+
+.eventos-card,
+.eventos-text {
+  font-size: 1.8rem;
+}
+
+.eventos-card {
+  display: flex;
+  text-align: left;
+  gap: 2.4rem;
+  color: var(--cinza-escuro);
+}
+
+.eventos-text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.eventos-data {
+  font-size: 1.2rem;
+}
+
+.eventos-title {
+  font-size: 2.4rem;
+  color: black;
+}
+
+.eventos-link:link,
+.eventos-link:visited {
+  display: inline-block;
+  text-decoration: underline;
+  margin-top: 3.2rem;
+}
+
+/***************************************
+********* CTA SECTION *************/
+
+.cta {
+  padding: 9.6rem 0;
+  text-align: center;
+  color: var(--branco);
+}
+
+.formulario {
+  margin-top: 3.2rem;
+  background-color: var(--magenta);
+  width: 60%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: left;
+  padding: 3.2rem;
+  border-radius: 1rem;
+  gap: 2.4rem;
+}
+
+label {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  grid-column: span 2;
+}
+
+input,
+select,
+textarea {
+  background-color: var(--magenta);
+  border: 1px solid var(--branco);
+  padding: 1.2rem;
+  color: var(--branco);
+}
+
+::placeholder,
+option {
+  color: var(--branco);
+}
+
+textarea {
+  grid-column: span 2;
+}
+
+button {
+  background-color: var(--magenta);
+  border: 1px solid var(--branco);
+  padding: 1.2rem;
+  font-weight: 700;
+  color: var(--branco);
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+button:hover {
+  background-color: var(--magenta-escuro);
+}
+
+/***************************************
+********* GALERIA SECTION *************/
+
+.galeria {
+  padding: 9.6rem 0;
+  background-color: var(--branco);
+  text-align: center;
+}
+
+.galeria-item {
+  height: 26rem;
+  overflow: hidden;
+}
+
+.galeria-img {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 3.2rem;
+}
+
+.galeria-img img {
+  width: 100%;
+  transition: all 0.3s ease-in;
+}
+
+.galeria-img img:hover {
+  transform: scale(140%);
+}
+
+/***************************************
+********* RODAPE SECTION *************/
+
+.footer {
+  background-color: black;
+  color: var(--branco);
+  padding: 9.6rem 0;
+}
+
+.footer-title {
+  font-weight: 700;
+  color: var(--cinza-escuro);
+  margin-bottom: 2.4rem;
+}
+
+.footer-text {
+  font-size: 1.4rem;
+}
+
+.links-box {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.footer-col input {
+  width: 70%;
+  margin-top: 2.4rem;
+}
+
+.footer-col button {
+  width: 25%;
+  text-align: center;
+}
+
+.footer-img-box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+
+.footer-img-box img {
+  width: 100%;
+}
